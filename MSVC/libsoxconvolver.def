@@ -1,0 +1,8 @@
+EXPORTS
+    lsx_convolver_create
+    lsx_convolver_close
+    lsx_convolver_process
+    lsx_convolver_process_ni
+    lsx_design_lpf
+    lsx_convolver_version_string
+    lsx_free

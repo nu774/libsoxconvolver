@@ -1,0 +1,29 @@
+libsoxconvolver
+===============
+
+libsoxconvolver is a DFT-based FIR filtering library based on
+SoX (http://sox.sourceforge.net/).
+
+Difference from libsox:
+  - Only containes FIR filter, plus lowpass filter designer.
+  - 32bit float based.
+  - Use PFFFT (https://bitbucket.org/jpommier/pffft/) for DFT when SSE is
+    available
+  - Different API.
+
+How to build (Unix)
+-------------------
+$ autoreconf -i
+$ ./configure && make
+$ sudo make install
+
+How to build (Windows)
+----------------------
+MSVC project (for Visual Studio 2010) is included.
+
+Note
+----
+ooura's fft4g and PFFFT are dynamically dispatched at runtime by checking
+SSE availability.
+configure with option "--disable-simd" just kills this dispatch, and 
+makes libsoxconvolver pick ooura's implementation even when SSE is available.
